@@ -108,8 +108,14 @@ Fields for `lilliput.ImageOptions` are as follows
 
 * `Height`: number of pixels of height of output image
 
-* `ResizeMethod`: one of `lilliput.ImageOpsNoResize` or `lilliput.ImageOpsFit`. `Fit` behavior
-is the same as `Framebuffer.Fit()` -- it performs a cropping resize that does not stretch the image.
+* `ResizeMethod`: one of:
+  - `lilliput.ImageOpsNoResize`: Does not resize image
+  - `lilliput.ImageOpsResize`: Resize and strech image
+  - `lilliput.ImageOpsFit`: Performs a cropping resize centred around the middle of the original image that does not stretch the image
+  - `lilliput.ImageOpsFitTopLeft`: Performs a cropping resize aligned to the top or left of the original image that does not stretch the image
+  - `lilliput.ImageOpsFitTopRight`: Performs a cropping resize aligned to the top or right of the original image that does not stretch the image
+  - `lilliput.ImageOpsFitBottomLeft`: Performs a cropping resize aligned to the bottom or left of the original image that does not stretch the image
+  - `lilliput.ImageOpsFitBottomRight`: Performs a cropping resize aligned to the bottom or right of the original image that does not stretch the image
 
 * `NormalizeOrientation`: If `true`, `Transform()` will inspect the image orientation and
 normalize the output so that it is facing in the standard orientation. This will undo
