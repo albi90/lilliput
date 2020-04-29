@@ -200,6 +200,7 @@ func (o *ImageOps) Transform(d Decoder, opt *ImageOptions, dst []byte) ([]byte, 
 			swapped, err = o.fitDirection(d, opt.Width, opt.Height, FitBottomRight)
 		default:
 			swapped, err = false, nil
+		}
 
 		if err != nil {
 			return nil, err
